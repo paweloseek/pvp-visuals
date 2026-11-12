@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "pvp-visuals",
+	"version": "${version}",
+	"name": "Pvp visuals",
+	"description": "PvP target visuals: highlights the player under your crosshair and displays a compact health and equipment HUD.",
+	"authors": [
+		"PvP Visuals"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/pvp-visuals/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.visuals.pvp.PvpVisuals"
+		],
+		"client": [
+			"com.visuals.pvp.client.PvpVisualsClient"
+		]
+	},
+	"mixins": [
+		"pvp-visuals.mixins.json",
+		{
+			"config": "pvp-visuals.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
